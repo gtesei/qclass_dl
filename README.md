@@ -18,5 +18,5 @@ https://github.com/tensorflow/tensorflow/tree/master/tensorflow/models/rnn/trans
 ```
 ./train_cnn.py --vn
 ./train_cnnlstm.py --lstm_type='gru'
-./train_lstm --batch_size=100 --
+./train_lstm.py --batch_size=100 --
 ```
