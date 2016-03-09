@@ -16,7 +16,7 @@ https://github.com/tensorflow/tensorflow/tree/master/tensorflow/models/rnn/trans
 
 ## To run
 ```
-./train.py_cnn.py --vn
-./train.py_cnnlstm.py --lstm_type='gru'
-./train.py_lstm --batch_size=100 --
+./train_cnn.py --vn
+./train_cnnlstm.py --lstm_type='gru'
+./train_lstm --batch_size=100 --
 ```
