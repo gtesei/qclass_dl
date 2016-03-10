@@ -151,7 +151,7 @@ with tf.Graph().as_default():
         sess.run(tf.initialize_all_variables())
 
         def real_len(xb):
-            return [np.ceil(np.argmin(i)*1.0/FLAGS.max_pool_size) for i in xb]
+            return [np.ceil(np.argmin(i + [0])*1.0/FLAGS.max_pool_size) for i in xb]
 
         def train_step(x_batch, y_batch):
             """

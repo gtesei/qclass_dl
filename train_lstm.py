@@ -146,7 +146,7 @@ with tf.Graph().as_default():
         sess.run(tf.initialize_all_variables())
 
         def real_len(xb):
-            return [np.argmin(i) for i in xb]
+            return [np.argmin(i + [0]) for i in xb]
 
         def train_step(x_batch, y_batch):
             """
