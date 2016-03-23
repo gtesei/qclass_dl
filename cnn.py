@@ -58,10 +58,7 @@ class cnn_class(object):
 
         # Add dropout
         with tf.name_scope("dropout"):
-            if self.dropout_keep_prob < 1:
-                self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
-            else:
-                self.h_drop = self.h_pool_flat
+            self.h_drop = tf.nn.dropout(self.h_pool_flat, self.dropout_keep_prob)
 
         # Final (unnormalized) scores and predictions
         with tf.name_scope("output"):

@@ -69,8 +69,7 @@ class cnnlstm_class(object):
                 pooled_concat.append(pooled)
 
         pooled_concat = tf.concat(2, pooled_concat)
-        if self.dropout_keep_prob < 1.0:
-            pooled_concat = tf.nn.dropout(pooled_concat, self.dropout_keep_prob)
+        pooled_concat = tf.nn.dropout(pooled_concat, self.dropout_keep_prob)
 
         # LSTM
         if lstm_type == "gru":
@@ -80,8 +79,7 @@ class cnnlstm_class(object):
                 lstm_cell = rnn_cell.BasicLSTMCell(num_units = hidden_unit, input_size = embedding_size)
             else:
                 lstm_cell = rnn_cell.LSTMCell(num_units = hidden_unit, input_size = embedding_size, use_peepholes = True)
-        if self.dropout_keep_prob < 1.0:
-            lstm_cell = rnn_cell.DropoutWrapper(lstm_cell, output_keep_prob = self.dropout_keep_prob)
+        lstm_cell = rnn_cell.DropoutWrapper(lstm_cell, output_keep_prob = self.dropout_keep_prob)
         
         self._initial_state = lstm_cell.zero_state(self.batch_size, tf.float32)
         inputs = [tf.squeeze(input_, [1]) for input_ in tf.split(1, reduced, pooled_concat)]
