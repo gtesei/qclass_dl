@@ -149,6 +149,7 @@ with tf.Graph().as_default():
 
         # Initialize all variables
         sess.run(tf.initialize_all_variables())
+        
 
         def real_len(xb):
             return [np.ceil(np.argmin(i + [0])*1.0/FLAGS.max_pool_size) for i in xb]
