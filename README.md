@@ -1,3 +1,5 @@
+Please refer to ProjectDescription.pdf for a full report of this project.
+
 # qclass_dl
 Question classification on TREC dataset (and its Vietnamese translation) using Deep Neural structures, namely CNN &amp; LSTM &amp; both of them.
 
